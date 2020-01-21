@@ -18,6 +18,8 @@ process.stdin.on('data', (data) => {
   }
   else if(cmd == 'ls'){
     require('./ls')();
+  } else if (cmd.slice(0,4) == 'cat '){
+    require('./cat')(cmd.slice(4));
   }
 
 })
